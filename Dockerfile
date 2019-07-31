@@ -10,7 +10,7 @@ RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/sbin/kubectl
 RUN curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/aws-iam-authenticator
 RUN chmod +x ./aws-iam-authenticator
-RUN ./aws-iam-authenticator /usr/sbin/aws-iam-authenticator
+RUN mv ./aws-iam-authenticator /usr/sbin/aws-iam-authenticator
 RUN curl -LO https://git.io/get_helm.sh
 RUN chmod 700 get_helm.sh
 RUN ./get_helm.sh
