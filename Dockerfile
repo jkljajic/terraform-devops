@@ -3,7 +3,7 @@ FROM hashicorp/terraform:latest
 LABEL usage  "Gitlab Build image for devops"
 
 RUN apk add --no-cache --virtual .build-deps g++ python3-dev libffi-dev openssl-dev 
-RUN apk add --no-cache --update openssl bash wget curl python3 
+RUN apk add --no-cache --update openssl bash wget curl python3 py3-pip 
 RUN pip3 install --upgrade pip setuptools awscli 
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl 
 RUN chmod +x ./kubectl 
